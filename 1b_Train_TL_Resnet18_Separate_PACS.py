@@ -50,7 +50,7 @@ image_datasets = {
     
 }
 
-batch_size = 1024
+batch_size = 1500
 dataloaders = {
     'train_object':
     torch.utils.data.DataLoader(image_datasets['train_object'],
@@ -83,7 +83,7 @@ class AlexNet_OH_DOM(nn.Module):
         self.conv5 = nn.Conv2d(in_channels=384, out_channels=256, kernel_size=3, stride=1, padding=1)
         self.fc1  = nn.Linear(in_features= 6400, out_features= 4096)
         self.fc2  = nn.Linear(in_features= 4096, out_features= 128)
-        self.fc3 = nn.Linear(in_features=128 , out_features=4)
+        self.fc3 = nn.Linear(in_features=128 , out_features=7)
 
 
     def forward(self,x):
@@ -116,7 +116,7 @@ EPOCHS = 200
 for epoch in range(EPOCHS):
     loss_ep = 0
     
-    for batch_idx, (data, targets) in enumerate(dataloaders['train_domain']):
+    for batch_idx, (data, targets) in enumerate(dataloaders['train_object']):
         data = data.to(device=device)
         targets = targets.to(device=device)
 
@@ -132,7 +132,7 @@ for epoch in range(EPOCHS):
     with torch.no_grad():
         num_correct = 0
         num_samples = 0
-        for batch_idx, (data,targets) in enumerate(dataloaders['test_domain']):
+        for batch_idx, (data,targets) in enumerate(dataloaders['test_object']):
             data = data.to(device=device)
             targets = targets.to(device=device)
             ## Forward Pass
@@ -144,4 +144,4 @@ for epoch in range(EPOCHS):
             f"Got {num_correct} / {num_samples} with accuracy {float(num_correct) / float(num_samples) * 100:.2f}"
         )
 
-torch.save(model.state_dict(), "1a_Resnet18_dom_pacs.pth")
+torch.save(model.state_dict(), "1b_Resnet18_obj_pacs.pth")

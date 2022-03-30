@@ -1,0 +1,194 @@
+Loss in epoch 0 :::: 0.03216937625849688
+Got 41 / 3116 with accuracy 1.32
+Loss in epoch 1 :::: 0.03204354496649754
+Got 71 / 3116 with accuracy 2.28
+Loss in epoch 2 :::: 0.031908615871712016
+Got 113 / 3116 with accuracy 3.63
+Loss in epoch 3 :::: 0.03173554090805995
+Got 135 / 3116 with accuracy 4.33
+Loss in epoch 4 :::: 0.03162026037404567
+Got 163 / 3116 with accuracy 5.23
+Loss in epoch 5 :::: 0.031327505538493026
+Got 163 / 3116 with accuracy 5.23
+Loss in epoch 6 :::: 0.03103314855216462
+Got 176 / 3116 with accuracy 5.65
+Loss in epoch 7 :::: 0.030750776330629986
+Got 214 / 3116 with accuracy 6.87
+Loss in epoch 8 :::: 0.030352939242198142
+Got 244 / 3116 with accuracy 7.83
+Loss in epoch 9 :::: 0.02991278635130988
+Got 255 / 3116 with accuracy 8.18
+Loss in epoch 10 :::: 0.029567940367592707
+Got 257 / 3116 with accuracy 8.25
+Loss in epoch 11 :::: 0.029285983722886922
+Got 265 / 3116 with accuracy 8.50
+Loss in epoch 12 :::: 0.02889014228626534
+Got 330 / 3116 with accuracy 10.59
+Loss in epoch 13 :::: 0.02833938028341458
+Got 330 / 3116 with accuracy 10.59
+Loss in epoch 14 :::: 0.027887984190458133
+Got 389 / 3116 with accuracy 12.48
+Loss in epoch 15 :::: 0.02746652545016489
+Got 403 / 3116 with accuracy 12.93
+Loss in epoch 16 :::: 0.02731056695367083
+Got 409 / 3116 with accuracy 13.13
+Loss in epoch 17 :::: 0.026895176113387684
+Got 429 / 3116 with accuracy 13.77
+Loss in epoch 18 :::: 0.026519854495554794
+Got 453 / 3116 with accuracy 14.54
+Loss in epoch 19 :::: 0.026304132960460806
+Got 495 / 3116 with accuracy 15.89
+Loss in epoch 20 :::: 0.02578457490897473
+Got 542 / 3116 with accuracy 17.39
+Loss in epoch 21 :::: 0.025583134021288083
+Got 536 / 3116 with accuracy 17.20
+Loss in epoch 22 :::: 0.025301396662806286
+Got 563 / 3116 with accuracy 18.07
+Loss in epoch 23 :::: 0.02493105479228644
+Got 587 / 3116 with accuracy 18.84
+Loss in epoch 24 :::: 0.024904306840013574
+Got 584 / 3116 with accuracy 18.74
+Loss in epoch 25 :::: 0.024307020836406283
+Got 587 / 3116 with accuracy 18.84
+Loss in epoch 26 :::: 0.02402908511367845
+Got 631 / 3116 with accuracy 20.25
+Loss in epoch 27 :::: 0.02376840125631403
+Got 662 / 3116 with accuracy 21.25
+Loss in epoch 28 :::: 0.023156037485158
+Got 679 / 3116 with accuracy 21.79
+Loss in epoch 29 :::: 0.02281869028085544
+Got 695 / 3116 with accuracy 22.30
+Loss in epoch 30 :::: 0.02258438019104946
+Got 738 / 3116 with accuracy 23.68
+Loss in epoch 31 :::: 0.022439045670591753
+Got 703 / 3116 with accuracy 22.56
+Loss in epoch 32 :::: 0.02223258474726736
+Got 691 / 3116 with accuracy 22.18
+Loss in epoch 33 :::: 0.02181082816771519
+Got 728 / 3116 with accuracy 23.36
+Loss in epoch 34 :::: 0.021518719968972384
+Got 755 / 3116 with accuracy 24.23
+Loss in epoch 35 :::: 0.02107314802246329
+Got 765 / 3116 with accuracy 24.55
+Loss in epoch 36 :::: 0.02067797897774496
+Got 767 / 3116 with accuracy 24.61
+Loss in epoch 37 :::: 0.020670389319643562
+Got 804 / 3116 with accuracy 25.80
+Loss in epoch 38 :::: 0.020270315953242926
+Got 802 / 3116 with accuracy 25.74
+Loss in epoch 39 :::: 0.019823776719010908
+Got 847 / 3116 with accuracy 27.18
+Loss in epoch 40 :::: 0.019495258544698173
+Got 775 / 3116 with accuracy 24.87
+Loss in epoch 41 :::: 0.01948516806702555
+Got 855 / 3116 with accuracy 27.44
+Loss in epoch 42 :::: 0.01888221318339124
+Got 858 / 3116 with accuracy 27.54
+Loss in epoch 43 :::: 0.01863302989506427
+Got 829 / 3116 with accuracy 26.60
+Loss in epoch 44 :::: 0.018516592957355357
+Got 883 / 3116 with accuracy 28.34
+Loss in epoch 45 :::: 0.017879512390972657
+Got 862 / 3116 with accuracy 27.66
+Loss in epoch 46 :::: 0.0175852898830249
+Got 927 / 3116 with accuracy 29.75
+Loss in epoch 47 :::: 0.017251510311056067
+Got 881 / 3116 with accuracy 28.27
+Loss in epoch 48 :::: 0.01684556919851421
+Got 897 / 3116 with accuracy 28.79
+Loss in epoch 49 :::: 0.016611802173249514
+Got 916 / 3116 with accuracy 29.40
+Loss in epoch 50 :::: 0.016280305054452684
+Got 894 / 3116 with accuracy 28.69
+Loss in epoch 51 :::: 0.016014417748392365
+Got 893 / 3116 with accuracy 28.66
+Loss in epoch 52 :::: 0.015904799195719355
+Got 952 / 3116 with accuracy 30.55
+Loss in epoch 53 :::: 0.015188609928260615
+Got 943 / 3116 with accuracy 30.26
+Loss in epoch 54 :::: 0.01486665865889302
+Got 957 / 3116 with accuracy 30.71
+Loss in epoch 55 :::: 0.014508468133431894
+Got 960 / 3116 with accuracy 30.81
+Loss in epoch 56 :::: 0.014146660948977059
+Got 971 / 3116 with accuracy 31.16
+Loss in epoch 57 :::: 0.013940506143334471
+Got 971 / 3116 with accuracy 31.16
+Loss in epoch 58 :::: 0.01373618151302691
+Got 976 / 3116 with accuracy 31.32
+Loss in epoch 59 :::: 0.013286877929428478
+Got 961 / 3116 with accuracy 30.84
+Loss in epoch 60 :::: 0.01280777358714445
+Got 1001 / 3116 with accuracy 32.12
+Loss in epoch 61 :::: 0.012337805496321784
+Got 1012 / 3116 with accuracy 32.48
+Loss in epoch 62 :::: 0.011913814938362733
+Got 1027 / 3116 with accuracy 32.96
+Loss in epoch 63 :::: 0.011954332759350907
+Got 984 / 3116 with accuracy 31.58
+Loss in epoch 64 :::: 0.011553788902582946
+Got 1005 / 3116 with accuracy 32.25
+Loss in epoch 65 :::: 0.011110559473803013
+Got 1027 / 3116 with accuracy 32.96
+Loss in epoch 66 :::: 0.010761200645823537
+Got 989 / 3116 with accuracy 31.74
+Loss in epoch 67 :::: 0.01071386471574689
+Got 985 / 3116 with accuracy 31.61
+Loss in epoch 68 :::: 0.010652563914104744
+Got 1012 / 3116 with accuracy 32.48
+Loss in epoch 69 :::: 0.009926005829999477
+Got 1060 / 3116 with accuracy 34.02
+Loss in epoch 70 :::: 0.009511086767838324
+Got 1022 / 3116 with accuracy 32.80
+Loss in epoch 71 :::: 0.009242670771516399
+Got 1037 / 3116 with accuracy 33.28
+Loss in epoch 72 :::: 0.008950256179144352
+Got 1046 / 3116 with accuracy 33.57
+Loss in epoch 73 :::: 0.008553117237709186
+Got 1025 / 3116 with accuracy 32.89
+Loss in epoch 74 :::: 0.008086876644764417
+Got 1059 / 3116 with accuracy 33.99
+Loss in epoch 75 :::: 0.00801489621768763
+Got 1025 / 3116 with accuracy 32.89
+Loss in epoch 76 :::: 0.007610934797996356
+Got 1027 / 3116 with accuracy 32.96
+Loss in epoch 77 :::: 0.007649883535909064
+Got 1054 / 3116 with accuracy 33.83
+Loss in epoch 78 :::: 0.007119041764073902
+Got 1047 / 3116 with accuracy 33.60
+Loss in epoch 79 :::: 0.006610365837444494
+Got 1058 / 3116 with accuracy 33.95
+Loss in epoch 80 :::: 0.006517911628808504
+Got 1042 / 3116 with accuracy 33.44
+Loss in epoch 81 :::: 0.0061556776916539225
+Got 1030 / 3116 with accuracy 33.06
+Loss in epoch 82 :::: 0.006133356763992781
+Got 1089 / 3116 with accuracy 34.95
+Loss in epoch 83 :::: 0.005692517407882361
+Got 1074 / 3116 with accuracy 34.47
+Loss in epoch 84 :::: 0.0053602927536876115
+Got 1074 / 3116 with accuracy 34.47
+Loss in epoch 85 :::: 0.005181550749658067
+Got 1057 / 3116 with accuracy 33.92
+Loss in epoch 86 :::: 0.005224707731862127
+Got 1034 / 3116 with accuracy 33.18
+Loss in epoch 87 :::: 0.004706607556637423
+Got 1061 / 3116 with accuracy 34.05
+Loss in epoch 88 :::: 0.004462431748340159
+Got 1066 / 3116 with accuracy 34.21
+Loss in epoch 89 :::: 0.004143839150115296
+Got 1071 / 3116 with accuracy 34.37
+Loss in epoch 90 :::: 0.00402246385720777
+Got 1059 / 3116 with accuracy 33.99
+Loss in epoch 91 :::: 0.00393105323575897
+Got 1055 / 3116 with accuracy 33.86
+Loss in epoch 92 :::: 0.0038016085731394497
+Got 1098 / 3116 with accuracy 35.24
+Loss in epoch 93 :::: 0.0034875042368600396
+Got 1090 / 3116 with accuracy 34.98
+Loss in epoch 94 :::: 0.003512027914877291
+Got 1104 / 3116 with accuracy 35.43
+Loss in epoch 95 :::: 0.0035453531201238985
+Got 1064 / 3116 with accuracy 34.15
+Loss in epoch 96 :::: 0.003581653383594972
+Got 1062 / 3116 with accuracy 34.08

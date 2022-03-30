@@ -50,7 +50,7 @@ image_datasets = {
     
 }
 
-batch_size = 1024
+batch_size = 1500
 dataloaders = {
     'train_object':
     torch.utils.data.DataLoader(image_datasets['train_object'],

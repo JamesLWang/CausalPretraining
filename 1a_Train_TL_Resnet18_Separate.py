@@ -40,17 +40,17 @@ data_transforms = {
 
 image_datasets = {
     'train_object': 
-    datasets.ImageFolder('OfficeHome_Train_Object', data_transforms['train']),
+    datasets.ImageFolder('/home/jlw2247/vondrick_2/OfficeHome_Train_Object', data_transforms['train']),
     'test_object': 
-    datasets.ImageFolder('OfficeHome_Test_Object', data_transforms['validation']),
+    datasets.ImageFolder('/home/jlw2247/vondrick_2/OfficeHome_Test_Object', data_transforms['validation']),
     'train_domain': 
-    datasets.ImageFolder('OfficeHome_Train_Domain', data_transforms['train']),
+    datasets.ImageFolder('/home/jlw2247/vondrick_2/OfficeHome_Train_Domain', data_transforms['train']),
     'test_domain': 
-    datasets.ImageFolder('OfficeHome_Test_Domain', data_transforms['validation'])
+    datasets.ImageFolder('/home/jlw2247/vondrick_2/OfficeHome_Test_Domain', data_transforms['validation'])
     
 }
 
-batch_size = 1024
+batch_size = 1296
 dataloaders = {
     'train_object':
     torch.utils.data.DataLoader(image_datasets['train_object'],

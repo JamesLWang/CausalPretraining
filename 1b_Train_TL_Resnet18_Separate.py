@@ -40,13 +40,13 @@ data_transforms = {
 
 image_datasets = {
     'train_object': 
-    datasets.ImageFolder('OfficeHome_Train_Object', data_transforms['train']),
+    datasets.ImageFolder('/home/jlw2247/vondrick_2/OfficeHome_Train_Object', data_transforms['train']),
     'test_object': 
-    datasets.ImageFolder('OfficeHome_Test_Object', data_transforms['validation']),
+    datasets.ImageFolder('/home/jlw2247/vondrick_2/OfficeHome_Test_Object', data_transforms['validation']),
     'train_domain': 
-    datasets.ImageFolder('OfficeHome_Train_Domain', data_transforms['train']),
+    datasets.ImageFolder('/home/jlw2247/vondrick_2/OfficeHome_Train_Domain', data_transforms['train']),
     'test_domain': 
-    datasets.ImageFolder('OfficeHome_Test_Domain', data_transforms['validation'])
+    datasets.ImageFolder('/home/jlw2247/vondrick_2/OfficeHome_Test_Domain', data_transforms['validation'])
     
 }
 
@@ -83,7 +83,7 @@ class AlexNet_OH_DOM(nn.Module):
         self.conv5 = nn.Conv2d(in_channels=384, out_channels=256, kernel_size=3, stride=1, padding=1)
         self.fc1  = nn.Linear(in_features= 6400, out_features= 4096)
         self.fc2  = nn.Linear(in_features= 4096, out_features= 128)
-        self.fc3 = nn.Linear(in_features=128 , out_features=7)
+        self.fc3 = nn.Linear(in_features=128 , out_features=65)
 
 
     def forward(self,x):
