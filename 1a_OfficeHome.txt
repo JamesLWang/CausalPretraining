@@ -182,3 +182,13 @@ Loss in epoch 90 :::: 0.00498985011636475
 Got 2074 / 3115 with accuracy 66.58
 Loss in epoch 91 :::: 0.00489872165116263
 Got 2116 / 3115 with accuracy 67.93
+Loss in epoch 92 :::: 0.004862618115213182
+Got 2120 / 3115 with accuracy 68.06
+Loss in epoch 93 :::: 0.0047898617699558355
+Got 2102 / 3115 with accuracy 67.48
+Loss in epoch 94 :::: 0.004759087238782718
+Got 2119 / 3115 with accuracy 68.03
+Loss in epoch 95 :::: 0.004825516845341082
+Got 2014 / 3115 with accuracy 64.65
+Loss in epoch 96 :::: 0.005161732849147584
+Got 2118 / 3115 with accuracy 67.99

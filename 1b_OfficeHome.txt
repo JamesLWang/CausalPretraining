@@ -192,3 +192,13 @@ Loss in epoch 95 :::: 0.0035453531201238985
 Got 1064 / 3116 with accuracy 34.15
 Loss in epoch 96 :::: 0.003581653383594972
 Got 1062 / 3116 with accuracy 34.08
+Loss in epoch 97 :::: 0.003245873192762151
+Got 1068 / 3116 with accuracy 34.27
+Loss in epoch 98 :::: 0.0031200610331179185
+Got 1079 / 3116 with accuracy 34.63
+Loss in epoch 99 :::: 0.0029021559720054085
+Got 1065 / 3116 with accuracy 34.18
+Loss in epoch 100 :::: 0.002609339048281128
+Got 1093 / 3116 with accuracy 35.08
+Loss in epoch 101 :::: 0.0024600725758958746
+Got 1064 / 3116 with accuracy 34.15
