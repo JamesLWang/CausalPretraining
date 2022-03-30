@@ -8,13 +8,13 @@
 * Create the environment from `environment.yml` file and `requirements.txt`. 
 * Run `conda env create -f environment.yml` and `conda activate envName`
 * Run `pip install requirements.txt`
----
+
 
 ## Data Preprocessing
 
 * Download the OfficeHome and PACS datasets from online.
 * Run the `0_DataProcessing_OfficeHome` and `0_DataProcessing_PACS` Jupyter notebooks to preprocess the data for training and testing object category and domain. 
----
+
 
 ## Model Training - Benchmarks
 
@@ -33,7 +33,7 @@
 ### Alexnet - Separate, Pretrained
 
 [TODO]
----
+
 
 ## Model Training - Causal Representations
 
