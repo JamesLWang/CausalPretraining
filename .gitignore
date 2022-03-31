@@ -1,6 +1,6 @@
 .downloads
 
 datasets/*
-!datasets/*.tar.gz
+!datasets/*.txt
 
 model_checkpoints

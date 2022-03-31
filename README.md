@@ -27,7 +27,7 @@ Either
 * Run the `preprocess/*.ipynb` Jupyter notebooks to preprocess the data for training and testing object category and domain. 
 
 Or
-- just untar the files under `datasets` folder to use our train/test splits
+- due to large size, you can find train/test splits used directly at https://drive.google.com/drive/folders/1f7m3-aYCLIgNmZoi_aRFHTEAzEq5K90-?usp=sharing
 
 
 ## Model Training - Benchmarks
