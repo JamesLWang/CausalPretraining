@@ -1,0 +1,550 @@
+
+		Loss in epoch 0 :::: 12.679257556796074, 
+		train dom acc ::: 0.7287
+		train obj acc ::: 0.2481
+		train_both_acc ::: 0.1862
+	
+
+			test dom acc ::: 1497/2007 being 0.7459
+			test obj acc ::: 638/2007 being 0.3179
+			test_both_acc ::: 496/2007 being 0.2471
+		
+
+		Loss in epoch 1 :::: 10.274079092778265, 
+		train dom acc ::: 0.8287
+		train obj acc ::: 0.3625
+		train_both_acc ::: 0.3138
+	
+
+			test dom acc ::: 1725/2007 being 0.8595
+			test obj acc ::: 768/2007 being 0.3827
+			test_both_acc ::: 682/2007 being 0.3398
+		
+
+		Loss in epoch 2 :::: 9.000558926723897, 
+		train dom acc ::: 0.8563
+		train obj acc ::: 0.4295
+		train_both_acc ::: 0.3859
+	
+
+			test dom acc ::: 1727/2007 being 0.8605
+			test obj acc ::: 936/2007 being 0.4664
+			test_both_acc ::: 838/2007 being 0.4175
+		
+
+		Loss in epoch 3 :::: 8.333154012449086, 
+		train dom acc ::: 0.8791
+		train obj acc ::: 0.4694
+		train_both_acc ::: 0.4294
+	
+
+			test dom acc ::: 1783/2007 being 0.8884
+			test obj acc ::: 994/2007 being 0.4953
+			test_both_acc ::: 930/2007 being 0.4634
+		
+
+		Loss in epoch 4 :::: 7.670708067249507, 
+		train dom acc ::: 0.8898
+		train obj acc ::: 0.5088
+		train_both_acc ::: 0.4739
+	
+
+			test dom acc ::: 1741/2007 being 0.8675
+			test obj acc ::: 1012/2007 being 0.5042
+			test_both_acc ::: 918/2007 being 0.4574
+		
+
+		Loss in epoch 5 :::: 7.329942535609007, 
+		train dom acc ::: 0.8948
+		train obj acc ::: 0.5332
+		train_both_acc ::: 0.4951
+	
+
+			test dom acc ::: 1809/2007 being 0.9013
+			test obj acc ::: 1109/2007 being 0.5526
+			test_both_acc ::: 1026/2007 being 0.5112
+		
+
+		Loss in epoch 6 :::: 6.957785559352487, 
+		train dom acc ::: 0.9056
+		train obj acc ::: 0.5526
+		train_both_acc ::: 0.5179
+	
+
+			test dom acc ::: 1795/2007 being 0.8944
+			test obj acc ::: 1075/2007 being 0.5356
+			test_both_acc ::: 1011/2007 being 0.5037
+		
+
+		Loss in epoch 7 :::: 6.458925098646432, 
+		train dom acc ::: 0.9123
+		train obj acc ::: 0.5854
+		train_both_acc ::: 0.5500
+	
+
+			test dom acc ::: 1835/2007 being 0.9143
+			test obj acc ::: 1147/2007 being 0.5715
+			test_both_acc ::: 1083/2007 being 0.5396
+		
+
+		Loss in epoch 8 :::: 6.269892199430615, 
+		train dom acc ::: 0.9158
+		train obj acc ::: 0.5966
+		train_both_acc ::: 0.5635
+	
+
+			test dom acc ::: 1804/2007 being 0.8989
+			test obj acc ::: 1189/2007 being 0.5924
+			test_both_acc ::: 1108/2007 being 0.5521
+		
+
+		Loss in epoch 9 :::: 5.953834199579433, 
+		train dom acc ::: 0.9188
+		train obj acc ::: 0.6261
+		train_both_acc ::: 0.5914
+	
+
+			test dom acc ::: 1774/2007 being 0.8839
+			test obj acc ::: 1196/2007 being 0.5959
+			test_both_acc ::: 1096/2007 being 0.5461
+		
+
+		Loss in epoch 10 :::: 5.601951692020521, 
+		train dom acc ::: 0.9248
+		train obj acc ::: 0.6389
+		train_both_acc ::: 0.6063
+	
+
+			test dom acc ::: 1837/2007 being 0.9153
+			test obj acc ::: 1251/2007 being 0.6233
+			test_both_acc ::: 1176/2007 being 0.5859
+		
+
+		Loss in epoch 11 :::: 5.354668158804998, 
+		train dom acc ::: 0.9301
+		train obj acc ::: 0.6618
+		train_both_acc ::: 0.6296
+	
+
+			test dom acc ::: 1853/2007 being 0.9233
+			test obj acc ::: 1217/2007 being 0.6064
+			test_both_acc ::: 1163/2007 being 0.5795
+		
+
+		Loss in epoch 12 :::: 5.090198329649866, 
+		train dom acc ::: 0.9337
+		train obj acc ::: 0.6792
+		train_both_acc ::: 0.6468
+	
+
+			test dom acc ::: 1869/2007 being 0.9312
+			test obj acc ::: 1298/2007 being 0.6467
+			test_both_acc ::: 1246/2007 being 0.6208
+		
+
+		Loss in epoch 13 :::: 4.936205534497276, 
+		train dom acc ::: 0.9365
+		train obj acc ::: 0.6910
+		train_both_acc ::: 0.6616
+	
+
+			test dom acc ::: 1844/2007 being 0.9188
+			test obj acc ::: 1308/2007 being 0.6517
+			test_both_acc ::: 1238/2007 being 0.6168
+		
+
+		Loss in epoch 14 :::: 4.613180970889516, 
+		train dom acc ::: 0.9401
+		train obj acc ::: 0.7085
+		train_both_acc ::: 0.6796
+	
+
+			test dom acc ::: 1844/2007 being 0.9188
+			test obj acc ::: 1324/2007 being 0.6597
+			test_both_acc ::: 1254/2007 being 0.6248
+		
+
+		Loss in epoch 15 :::: 4.407573220552877, 
+		train dom acc ::: 0.9408
+		train obj acc ::: 0.7223
+		train_both_acc ::: 0.6936
+	
+
+			test dom acc ::: 1823/2007 being 0.9083
+			test obj acc ::: 1324/2007 being 0.6597
+			test_both_acc ::: 1228/2007 being 0.6119
+		
+
+		Loss in epoch 16 :::: 4.133086210815236, 
+		train dom acc ::: 0.9466
+		train obj acc ::: 0.7405
+		train_both_acc ::: 0.7103
+	
+
+			test dom acc ::: 1861/2007 being 0.9273
+			test obj acc ::: 1356/2007 being 0.6756
+			test_both_acc ::: 1292/2007 being 0.6437
+		
+
+		Loss in epoch 17 :::: 4.055263800080866, 
+		train dom acc ::: 0.9445
+		train obj acc ::: 0.7524
+		train_both_acc ::: 0.7209
+	
+
+			test dom acc ::: 1862/2007 being 0.9278
+			test obj acc ::: 1361/2007 being 0.6781
+			test_both_acc ::: 1293/2007 being 0.6442
+		
+
+		Loss in epoch 18 :::: 3.7240150501020253, 
+		train dom acc ::: 0.9512
+		train obj acc ::: 0.7718
+		train_both_acc ::: 0.7449
+	
+
+			test dom acc ::: 1863/2007 being 0.9283
+			test obj acc ::: 1398/2007 being 0.6966
+			test_both_acc ::: 1326/2007 being 0.6607
+		
+
+		Loss in epoch 19 :::: 3.5840868460945785, 
+		train dom acc ::: 0.9542
+		train obj acc ::: 0.7829
+		train_both_acc ::: 0.7565
+	
+
+			test dom acc ::: 1871/2007 being 0.9322
+			test obj acc ::: 1398/2007 being 0.6966
+			test_both_acc ::: 1339/2007 being 0.6672
+		
+
+		Loss in epoch 20 :::: 3.3327225643442944, 
+		train dom acc ::: 0.9572
+		train obj acc ::: 0.7938
+		train_both_acc ::: 0.7715
+	
+
+			test dom acc ::: 1851/2007 being 0.9223
+			test obj acc ::: 1369/2007 being 0.6821
+			test_both_acc ::: 1311/2007 being 0.6532
+		
+
+		Loss in epoch 21 :::: 3.332649092306383, 
+		train dom acc ::: 0.9563
+		train obj acc ::: 0.7977
+		train_both_acc ::: 0.7707
+	
+
+			test dom acc ::: 1854/2007 being 0.9238
+			test obj acc ::: 1386/2007 being 0.6906
+			test_both_acc ::: 1320/2007 being 0.6577
+		
+
+		Loss in epoch 22 :::: 2.9409632990136743, 
+		train dom acc ::: 0.9659
+		train obj acc ::: 0.8163
+		train_both_acc ::: 0.7948
+	
+
+			test dom acc ::: 1870/2007 being 0.9317
+			test obj acc ::: 1387/2007 being 0.6911
+			test_both_acc ::: 1318/2007 being 0.6567
+		
+
+		Loss in epoch 23 :::: 2.8508818021800835, 
+		train dom acc ::: 0.9647
+		train obj acc ::: 0.8229
+		train_both_acc ::: 0.8007
+	
+
+			test dom acc ::: 1868/2007 being 0.9307
+			test obj acc ::: 1408/2007 being 0.7015
+			test_both_acc ::: 1339/2007 being 0.6672
+		
+
+		Loss in epoch 24 :::: 2.6365948393940926, 
+		train dom acc ::: 0.9683
+		train obj acc ::: 0.8412
+		train_both_acc ::: 0.8225
+	
+
+			test dom acc ::: 1865/2007 being 0.9292
+			test obj acc ::: 1430/2007 being 0.7125
+			test_both_acc ::: 1357/2007 being 0.6761
+		
+
+		Loss in epoch 25 :::: 2.541170852025971, 
+		train dom acc ::: 0.9687
+		train obj acc ::: 0.8482
+		train_both_acc ::: 0.8265
+	
+
+			test dom acc ::: 1852/2007 being 0.9228
+			test obj acc ::: 1352/2007 being 0.6736
+			test_both_acc ::: 1290/2007 being 0.6428
+		
+
+		Loss in epoch 26 :::: 2.3541358807124197, 
+		train dom acc ::: 0.9722
+		train obj acc ::: 0.8592
+		train_both_acc ::: 0.8411
+	
+
+			test dom acc ::: 1858/2007 being 0.9258
+			test obj acc ::: 1436/2007 being 0.7155
+			test_both_acc ::: 1360/2007 being 0.6776
+		
+
+		Loss in epoch 27 :::: 2.1243761376244947, 
+		train dom acc ::: 0.9756
+		train obj acc ::: 0.8722
+		train_both_acc ::: 0.8548
+	
+
+			test dom acc ::: 1861/2007 being 0.9273
+			test obj acc ::: 1427/2007 being 0.7110
+			test_both_acc ::: 1354/2007 being 0.6746
+		
+
+		Loss in epoch 28 :::: 2.0778317152289674, 
+		train dom acc ::: 0.9773
+		train obj acc ::: 0.8734
+		train_both_acc ::: 0.8585
+	
+
+			test dom acc ::: 1855/2007 being 0.9243
+			test obj acc ::: 1426/2007 being 0.7105
+			test_both_acc ::: 1345/2007 being 0.6702
+		
+
+		Loss in epoch 29 :::: 2.099394239281537, 
+		train dom acc ::: 0.9746
+		train obj acc ::: 0.8747
+		train_both_acc ::: 0.8567
+	
+
+			test dom acc ::: 1859/2007 being 0.9263
+			test obj acc ::: 1410/2007 being 0.7025
+			test_both_acc ::: 1328/2007 being 0.6617
+		
+
+		Loss in epoch 30 :::: 1.7782658948272, 
+		train dom acc ::: 0.9803
+		train obj acc ::: 0.8914
+		train_both_acc ::: 0.8770
+	
+
+			test dom acc ::: 1860/2007 being 0.9268
+			test obj acc ::: 1417/2007 being 0.7060
+			test_both_acc ::: 1350/2007 being 0.6726
+		
+
+		Loss in epoch 31 :::: 1.741195972354035, 
+		train dom acc ::: 0.9797
+		train obj acc ::: 0.8942
+		train_both_acc ::: 0.8778
+	
+
+			test dom acc ::: 1866/2007 being 0.9297
+			test obj acc ::: 1417/2007 being 0.7060
+			test_both_acc ::: 1347/2007 being 0.6712
+		
+
+		Loss in epoch 32 :::: 1.5952545866603032, 
+		train dom acc ::: 0.9830
+		train obj acc ::: 0.9017
+		train_both_acc ::: 0.8892
+	
+
+			test dom acc ::: 1857/2007 being 0.9253
+			test obj acc ::: 1431/2007 being 0.7130
+			test_both_acc ::: 1353/2007 being 0.6741
+		
+
+		Loss in epoch 33 :::: 1.6294610731638386, 
+		train dom acc ::: 0.9781
+		train obj acc ::: 0.9048
+		train_both_acc ::: 0.8887
+	
+
+			test dom acc ::: 1853/2007 being 0.9233
+			test obj acc ::: 1423/2007 being 0.7090
+			test_both_acc ::: 1356/2007 being 0.6756
+		
+
+		Loss in epoch 34 :::: 1.415912047465099, 
+		train dom acc ::: 0.9872
+		train obj acc ::: 0.9114
+		train_both_acc ::: 0.9024
+	
+
+			test dom acc ::: 1866/2007 being 0.9297
+			test obj acc ::: 1431/2007 being 0.7130
+			test_both_acc ::: 1363/2007 being 0.6791
+		
+
+		Loss in epoch 35 :::: 1.3473793429002399, 
+		train dom acc ::: 0.9837
+		train obj acc ::: 0.9250
+		train_both_acc ::: 0.9116
+	
+
+			test dom acc ::: 1858/2007 being 0.9258
+			test obj acc ::: 1439/2007 being 0.7170
+			test_both_acc ::: 1364/2007 being 0.6796
+		
+
+		Loss in epoch 36 :::: 1.2976131954055745, 
+		train dom acc ::: 0.9858
+		train obj acc ::: 0.9185
+		train_both_acc ::: 0.9079
+	
+
+			test dom acc ::: 1854/2007 being 0.9238
+			test obj acc ::: 1453/2007 being 0.7240
+			test_both_acc ::: 1376/2007 being 0.6856
+		
+
+		Loss in epoch 37 :::: 1.1430377449505613, 
+		train dom acc ::: 0.9887
+		train obj acc ::: 0.9287
+		train_both_acc ::: 0.9193
+	
+
+			test dom acc ::: 1868/2007 being 0.9307
+			test obj acc ::: 1410/2007 being 0.7025
+			test_both_acc ::: 1337/2007 being 0.6662
+		
+
+		Loss in epoch 38 :::: 1.2258976026460005, 
+		train dom acc ::: 0.9858
+		train obj acc ::: 0.9280
+		train_both_acc ::: 0.9165
+	
+
+			test dom acc ::: 1869/2007 being 0.9312
+			test obj acc ::: 1419/2007 being 0.7070
+			test_both_acc ::: 1350/2007 being 0.6726
+		
+
+		Loss in epoch 39 :::: 1.1463023895921651, 
+		train dom acc ::: 0.9881
+		train obj acc ::: 0.9315
+		train_both_acc ::: 0.9220
+	
+
+			test dom acc ::: 1863/2007 being 0.9283
+			test obj acc ::: 1448/2007 being 0.7215
+			test_both_acc ::: 1373/2007 being 0.6841
+		
+
+		Loss in epoch 40 :::: 0.9771336485282518, 
+		train dom acc ::: 0.9901
+		train obj acc ::: 0.9429
+		train_both_acc ::: 0.9344
+	
+
+			test dom acc ::: 1869/2007 being 0.9312
+			test obj acc ::: 1433/2007 being 0.7140
+			test_both_acc ::: 1365/2007 being 0.6801
+		
+
+		Loss in epoch 41 :::: 1.0115315721413936, 
+		train dom acc ::: 0.9902
+		train obj acc ::: 0.9389
+		train_both_acc ::: 0.9310
+	
+
+			test dom acc ::: 1874/2007 being 0.9337
+			test obj acc ::: 1468/2007 being 0.7314
+			test_both_acc ::: 1401/2007 being 0.6981
+		
+
+		Loss in epoch 42 :::: 0.8980517949139539, 
+		train dom acc ::: 0.9897
+		train obj acc ::: 0.9464
+		train_both_acc ::: 0.9376
+	
+
+			test dom acc ::: 1868/2007 being 0.9307
+			test obj acc ::: 1448/2007 being 0.7215
+			test_both_acc ::: 1372/2007 being 0.6836
+		
+
+		Loss in epoch 43 :::: 0.9999043353773232, 
+		train dom acc ::: 0.9876
+		train obj acc ::: 0.9464
+		train_both_acc ::: 0.9351
+	
+
+			test dom acc ::: 1861/2007 being 0.9273
+			test obj acc ::: 1454/2007 being 0.7245
+			test_both_acc ::: 1383/2007 being 0.6891
+		
+
+		Loss in epoch 44 :::: 0.7423538054845267, 
+		train dom acc ::: 0.9930
+		train obj acc ::: 0.9559
+		train_both_acc ::: 0.9494
+	
+
+			test dom acc ::: 1863/2007 being 0.9283
+			test obj acc ::: 1444/2007 being 0.7195
+			test_both_acc ::: 1368/2007 being 0.6816
+		
+
+		Loss in epoch 45 :::: 0.8748845223890385, 
+		train dom acc ::: 0.9901
+		train obj acc ::: 0.9512
+		train_both_acc ::: 0.9423
+	
+
+			test dom acc ::: 1868/2007 being 0.9307
+			test obj acc ::: 1461/2007 being 0.7280
+			test_both_acc ::: 1392/2007 being 0.6936
+		
+
+		Loss in epoch 46 :::: 0.6467386197700762, 
+		train dom acc ::: 0.9941
+		train obj acc ::: 0.9618
+		train_both_acc ::: 0.9570
+	
+
+			test dom acc ::: 1853/2007 being 0.9233
+			test obj acc ::: 1455/2007 being 0.7250
+			test_both_acc ::: 1371/2007 being 0.6831
+		
+
+		Loss in epoch 47 :::: 0.8518794630581397, 
+		train dom acc ::: 0.9897
+		train obj acc ::: 0.9533
+		train_both_acc ::: 0.9445
+	
+
+			test dom acc ::: 1859/2007 being 0.9263
+			test obj acc ::: 1452/2007 being 0.7235
+			test_both_acc ::: 1376/2007 being 0.6856
+		
+
+		Loss in epoch 48 :::: 0.6538235797888774, 
+		train dom acc ::: 0.9936
+		train obj acc ::: 0.9626
+		train_both_acc ::: 0.9577
+	
+
+			test dom acc ::: 1860/2007 being 0.9268
+			test obj acc ::: 1417/2007 being 0.7060
+			test_both_acc ::: 1350/2007 being 0.6726
+		
+
+		Loss in epoch 49 :::: 0.6832033793166374, 
+		train dom acc ::: 0.9919
+		train obj acc ::: 0.9609
+		train_both_acc ::: 0.9542
+	
+
+			test dom acc ::: 1862/2007 being 0.9278
+			test obj acc ::: 1450/2007 being 0.7225
+			test_both_acc ::: 1376/2007 being 0.6856
+		

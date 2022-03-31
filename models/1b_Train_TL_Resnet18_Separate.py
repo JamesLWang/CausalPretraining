@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 import time
 import os
 import copy
+import pathlib
 import torch.nn.functional as F
 
 import os
@@ -37,16 +38,19 @@ data_transforms = {
     ]),
 }
 
+root = pathlib.Path(__file__).parent.parent.resolve()
+dataset_root = f"{root}/datasets/OfficeHome"
+model_save_dir = f"{root}/model_checkpoints"
 
 image_datasets = {
     'train_object': 
-    datasets.ImageFolder('/home/jlw2247/vondrick_2/OfficeHome_Train_Object', data_transforms['train']),
+    datasets.ImageFolder(f'{dataset_root}/OfficeHome_Train_Object', data_transforms['train']),
     'test_object': 
-    datasets.ImageFolder('/home/jlw2247/vondrick_2/OfficeHome_Test_Object', data_transforms['validation']),
+    datasets.ImageFolder(f'{dataset_root}/OfficeHome_Test_Object', data_transforms['validation']),
     'train_domain': 
-    datasets.ImageFolder('/home/jlw2247/vondrick_2/OfficeHome_Train_Domain', data_transforms['train']),
+    datasets.ImageFolder(f'{dataset_root}/OfficeHome_Train_Domain', data_transforms['train']),
     'test_domain': 
-    datasets.ImageFolder('/home/jlw2247/vondrick_2/OfficeHome_Test_Domain', data_transforms['validation'])
+    datasets.ImageFolder(f'{dataset_root}/OfficeHome_Test_Domain', data_transforms['validation'])
     
 }
 
@@ -144,4 +148,4 @@ for epoch in range(EPOCHS):
             f"Got {num_correct} / {num_samples} with accuracy {float(num_correct) / float(num_samples) * 100:.2f}"
         )
 
-torch.save(model.state_dict(), "1b_Resnet18_obj.pth")
+torch.save(model.state_dict(), f"{model_save_dir}/1b_Resnet18_obj.pth")

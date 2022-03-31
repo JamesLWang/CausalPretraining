@@ -11,6 +11,7 @@ import time
 import os
 import copy
 import torch.nn.functional as F
+import pathlib
 
 import os
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"   # see issue #152
@@ -37,16 +38,19 @@ data_transforms = {
     ]),
 }
 
+root = pathlib.Path(__file__).parent.parent.resolve()
+dataset_root = f"{root}/datasets/PACS"
+model_save_dir = f"{root}/model_checkpoints"
 
 image_datasets = {
     'train_object': 
-    datasets.ImageFolder('PACS_Train_Object', data_transforms['train']),
+    datasets.ImageFolder(f'{dataset_root}/PACS_Train_Object', data_transforms['train']),
     'test_object': 
-    datasets.ImageFolder('PACS_Test_Object', data_transforms['validation']),
+    datasets.ImageFolder(f'{dataset_root}/PACS_Test_Object', data_transforms['validation']),
     'train_domain': 
-    datasets.ImageFolder('PACS_Train_Domain', data_transforms['train']),
+    datasets.ImageFolder(f'{dataset_root}/PACS_Train_Domain', data_transforms['train']),
     'test_domain': 
-    datasets.ImageFolder('PACS_Test_Domain', data_transforms['validation'])
+    datasets.ImageFolder(f'{dataset_root}/PACS_Test_Domain', data_transforms['validation'])
     
 }
 
@@ -144,4 +148,4 @@ for epoch in range(EPOCHS):
             f"Got {num_correct} / {num_samples} with accuracy {float(num_correct) / float(num_samples) * 100:.2f}"
         )
 
-torch.save(model.state_dict(), "1b_Resnet18_obj_pacs.pth")
+torch.save(model.state_dict(), f"{model_save_dir}/1b_Resnet18_obj_pacs.pth")

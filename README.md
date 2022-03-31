@@ -9,22 +9,37 @@
 * Run `conda env create -f environment.yml` and `conda activate envName`
 * Run `pip install requirements.txt`
 
+## Project Structure
+
+```bash
+root
+├── datasets/ 		# contains the datasets we used
+├── logs/ 			# logging for models
+├── models/ 		# model implementations
+├── preprocess/ 	# data preprocessing
+├── *.ipynb 		# experimental code
+└── *.py
+```
 
 ## Data Preprocessing
-
+Either
 * Download the OfficeHome and PACS datasets from online.
-* Run the `0_DataProcessing_OfficeHome` and `0_DataProcessing_PACS` Jupyter notebooks to preprocess the data for training and testing object category and domain. 
+* Run the `preprocess/*.ipynb` Jupyter notebooks to preprocess the data for training and testing object category and domain. 
+
+Or
+- just untar the files under `datasets` folder to use our train/test splits
 
 
 ## Model Training - Benchmarks
 
 ### Alexnet - Shared
 
-[TODO]
+- run `python models/alexnet_shared.py` for classifying domain and object at the same time using a shared backbone on PACS dataset. 
 
 ### Alexnet - Separate
 
-* Run `python 1a_Train_TL_Resnet18_Separate_PACS.py` for domain classification and `python 1b_Train_TL_Resnet18_Separate_PACS.py` for object classification on PACS dataset. 
+- Run `python models/1a_Train_TL_Resnet18_Separate_PACS.py` for domain classification on PACS dataset. 
+- Run `python models/1b_Train_TL_Resnet18_Separate_PACS.py` for object classification on PACS dataset. 
 
 ### Alexnet - Shared, Pretrained
 
