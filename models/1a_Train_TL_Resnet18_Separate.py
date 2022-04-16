@@ -12,10 +12,11 @@ import os
 import copy
 import torch.nn.functional as F
 import pathlib
+from torchvision.models.resnet import resnet18 as resnet18
 
 import os
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"   # see issue #152
-os.environ["CUDA_VISIBLE_DEVICES"]="7"
+os.environ["CUDA_VISIBLE_DEVICES"]="3"
 
 normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                  std=[0.229, 0.224, 0.225])
@@ -54,7 +55,7 @@ image_datasets = {
     
 }
 
-batch_size = 1296
+batch_size = 650
 dataloaders = {
     'train_object':
     torch.utils.data.DataLoader(image_datasets['train_object'],
@@ -73,41 +74,13 @@ dataloaders = {
                                 batch_size=batch_size,
                                 shuffle=False, num_workers=4),
     
-    
+
 }
 
-class AlexNet_OH_DOM(nn.Module):
-    def __init__(self):
-        super(AlexNet_OH_DOM, self).__init__()
-        self.conv1 = nn.Conv2d(in_channels=3, out_channels= 96, kernel_size= 11, stride=4, padding=0 )
-        self.maxpool = nn.MaxPool2d(kernel_size=3, stride=2)
-        self.conv2 = nn.Conv2d(in_channels=96, out_channels=256, kernel_size=5, stride= 1, padding= 2)
-        self.conv3 = nn.Conv2d(in_channels=256, out_channels=384, kernel_size=3, stride= 1, padding= 1)
-        self.conv4 = nn.Conv2d(in_channels=384, out_channels=384, kernel_size=3, stride=1, padding=1)
-        self.conv5 = nn.Conv2d(in_channels=384, out_channels=256, kernel_size=3, stride=1, padding=1)
-        self.fc1  = nn.Linear(in_features= 6400, out_features= 4096)
-        self.fc2  = nn.Linear(in_features= 4096, out_features= 128)
-        self.fc3 = nn.Linear(in_features=128 , out_features=4)
 
-
-    def forward(self,x):
-        x = F.relu(self.conv1(x))
-        x = self.maxpool(x)
-        x = F.relu(self.conv2(x))
-        x = self.maxpool(x)
-        x = F.relu(self.conv3(x))
-        x = F.relu(self.conv4(x))
-        x = F.relu(self.conv5(x))
-        x = self.maxpool(x)
-        x = x.reshape(x.shape[0], -1)
-        x = F.relu(self.fc1(x))
-        x = F.relu(self.fc2(x))
-        x = self.fc3(x)
-        return x
-    
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu') #training with either cpu or cuda
 
-model = AlexNet_OH_DOM() #to compile the model
+model = resnet18(pretrained=False)
 model = model.to(device=device) #to send the model for training on either cuda or cpu
 
 ## Loss and optimizer
