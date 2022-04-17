@@ -12,11 +12,10 @@ import os
 import copy
 import torch.nn.functional as F
 import pathlib
-from torchvision.models.resnet import resnet18 as resnet18
 
 import os
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"   # see issue #152
-# os.environ["CUDA_VISIBLE_DEVICES"]="6,7"
+os.environ["CUDA_VISIBLE_DEVICES"]="5"
 
 normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                  std=[0.229, 0.224, 0.225])
@@ -40,22 +39,22 @@ data_transforms = {
 }
 
 root = pathlib.Path(__file__).parent.parent.resolve()
-dataset_root = f"{root}/datasets/OfficeHome"
+dataset_root = f"{root}/datasets/PACS"
 model_save_dir = f"{root}/model_checkpoints"
 
 image_datasets = {
     'train_object': 
-    datasets.ImageFolder(f'{dataset_root}/OfficeHome_Train_Object', data_transforms['train']),
+    datasets.ImageFolder(f'{dataset_root}/PACS_Train_Object', data_transforms['train']),
     'test_object': 
-    datasets.ImageFolder(f'{dataset_root}/OfficeHome_Test_Object', data_transforms['validation']),
+    datasets.ImageFolder(f'{dataset_root}/PACS_Test_Object', data_transforms['validation']),
     'train_domain': 
-    datasets.ImageFolder(f'{dataset_root}/OfficeHome_Train_Domain', data_transforms['train']),
+    datasets.ImageFolder(f'{dataset_root}/PACS_Train_Domain', data_transforms['train']),
     'test_domain': 
-    datasets.ImageFolder(f'{dataset_root}/OfficeHome_Test_Domain', data_transforms['validation'])
+    datasets.ImageFolder(f'{dataset_root}/PACS_Test_Domain', data_transforms['validation'])
     
 }
 
-batch_size = 1300
+batch_size = 1500
 dataloaders = {
     'train_object':
     torch.utils.data.DataLoader(image_datasets['train_object'],
@@ -74,15 +73,44 @@ dataloaders = {
                                 batch_size=batch_size,
                                 shuffle=False, num_workers=4),
     
-
+    
 }
 
+class AlexNet_OH_DOM(nn.Module):
+    def __init__(self):
+        super(AlexNet_OH_DOM, self).__init__()
+        self.conv1 = nn.Conv2d(in_channels=3, out_channels= 96, kernel_size= 11, stride=4, padding=0 )
+        self.maxpool = nn.MaxPool2d(kernel_size=3, stride=2)
+        self.conv2 = nn.Conv2d(in_channels=96, out_channels=256, kernel_size=5, stride= 1, padding= 2)
+        self.conv3 = nn.Conv2d(in_channels=256, out_channels=384, kernel_size=3, stride= 1, padding= 1)
+        self.conv4 = nn.Conv2d(in_channels=384, out_channels=384, kernel_size=3, stride=1, padding=1)
+        self.conv5 = nn.Conv2d(in_channels=384, out_channels=256, kernel_size=3, stride=1, padding=1)
+        self.fc1  = nn.Linear(in_features= 6400, out_features= 4096)
+        self.fc2  = nn.Linear(in_features= 4096, out_features= 128)
+        self.fc3 = nn.Linear(in_features=128 , out_features=7)
 
+
+    def forward(self,x):
+        x = F.relu(self.conv1(x))
+        x = self.maxpool(x)
+        x = F.relu(self.conv2(x))
+        x = self.maxpool(x)
+        x = F.relu(self.conv3(x))
+        x = F.relu(self.conv4(x))
+        x = F.relu(self.conv5(x))
+        x = self.maxpool(x)
+        x = x.reshape(x.shape[0], -1)
+        x = F.relu(self.fc1(x))
+        x = F.relu(self.fc2(x))
+        x = self.fc3(x)
+        return x
+    
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu') #training with either cpu or cuda
 
-model = resnet18(pretrained=False)
+model = AlexNet_OH_DOM() #to compile the model
 model = model.to(device=device) #to send the model for training on either cuda or cpu
 model = nn.DataParallel(model).cuda()
+
 
 ## Loss and optimizer
 learning_rate = 1e-4 #I picked this because it seems to be the most used by experts
@@ -92,11 +120,12 @@ optimizer = optim.Adam(model.parameters(), lr= learning_rate) #Adam seems to be 
 
 EPOCHS = 200
 best_acc = 0
+
 for epoch in range(EPOCHS):
     loss_ep = 0
     train_num_correct = 0
     train_num_samples = 0
-    for batch_idx, (data, targets) in enumerate(dataloaders['train_domain']):
+    for batch_idx, (data, targets) in enumerate(dataloaders['train_object']):
         data = data.to(device=device)
         targets = targets.to(device=device)
 
@@ -113,12 +142,12 @@ for epoch in range(EPOCHS):
         train_num_correct += (predictions == targets).sum()
         train_num_samples += predictions.size(0)
 
-    print(f"Loss in epoch {epoch} :::: {loss_ep/batch_size}, train acc ::: {train_num_correct/float(train_num_samples):.2f}")
+    print(f"Loss in epoch {epoch} :::: {loss_ep/batch_size},  train acc ::: {train_num_correct/float(train_num_samples):.2f}")
     
     with torch.no_grad():
         num_correct = 0
         num_samples = 0
-        for batch_idx, (data,targets) in enumerate(dataloaders['test_domain']):
+        for batch_idx, (data,targets) in enumerate(dataloaders['test_object']):
             data = data.to(device=device)
             targets = targets.to(device=device)
             ## Forward Pass
@@ -126,12 +155,13 @@ for epoch in range(EPOCHS):
             _, predictions = scores.max(1)
             num_correct += (predictions == targets).sum()
             num_samples += predictions.size(0)
+
         print(
             f"Got {num_correct} / {num_samples} with accuracy {float(num_correct) / float(num_samples) * 100:.2f}"
         )
+
         if float(num_correct) / float(num_samples) > best_acc:
             best_acc = float(num_correct) / float(num_samples)
-            torch.save(model.state_dict(), f"{model_save_dir}/1a_Resnet18_dom_best.pth")
+            torch.save(model.state_dict(), f"{model_save_dir}/1a_Alexnet_obj_pacs_best.pth")
 
-
-torch.save(model.state_dict(), f"{model_save_dir}/1a_Resnet18_dom_{EPOCHS}.pth")
+torch.save(model.state_dict(), f"{model_save_dir}/1b_Alexnet_obj_pacs_{EPOCHS}.pth")

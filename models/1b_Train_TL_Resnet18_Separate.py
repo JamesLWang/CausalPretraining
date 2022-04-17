@@ -10,16 +10,14 @@ import matplotlib.pyplot as plt
 import time
 import os
 import copy
+import pathlib
 import torch.nn.functional as F
 from torchvision.models.resnet import resnet18 as resnet18
 
 import os
-import pathlib
 
-root = pathlib.Path(__file__).parent.parent.resolve()
-
-# os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"   # see issue #152
-# os.environ["CUDA_VISIBLE_DEVICES"]="4"
+os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"  # see issue #152
+os.environ["CUDA_VISIBLE_DEVICES"] = "6"
 
 normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                  std=[0.229, 0.224, 0.225])
@@ -42,21 +40,23 @@ data_transforms = {
         ]),
 }
 
-dataset_root = f"{root}/datasets/PACS"
+root = pathlib.Path(__file__).parent.parent.resolve()
+dataset_root = f"{root}/datasets/OfficeHome"
 model_save_dir = f"{root}/model_checkpoints"
 
 image_datasets = {
     'train_object':
-        datasets.ImageFolder(f'{dataset_root}/PACS_Train_Object', data_transforms['train']),
+        datasets.ImageFolder(f'{dataset_root}/OfficeHome_Train_Object', data_transforms['train']),
     'test_object':
-        datasets.ImageFolder(f'{dataset_root}/PACS_Test_Object', data_transforms['validation']),
+        datasets.ImageFolder(f'{dataset_root}/OfficeHome_Test_Object', data_transforms['validation']),
     'train_domain':
-        datasets.ImageFolder(f'{dataset_root}/PACS_Train_Domain', data_transforms['train']),
+        datasets.ImageFolder(f'{dataset_root}/OfficeHome_Train_Domain', data_transforms['train']),
     'test_domain':
-        datasets.ImageFolder(f'{dataset_root}/PACS_Test_Domain', data_transforms['validation'])
+        datasets.ImageFolder(f'{dataset_root}/OfficeHome_Test_Domain', data_transforms['validation'])
+
 }
 
-batch_size = 1300
+batch_size = 1296
 dataloaders = {
     'train_object':
         torch.utils.data.DataLoader(image_datasets['train_object'],
@@ -78,7 +78,6 @@ dataloaders = {
 }
 
 
-
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')  # training with either cpu or cuda
 
 model = resnet18(pretrained=False)
@@ -91,15 +90,12 @@ load_model = True
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=learning_rate)  # Adam seems to be the most popular for deep learning
 
-EPOCHS = 40
-best_acc = 0
-
+EPOCHS = 200
 for epoch in range(EPOCHS):
     loss_ep = 0
-
     train_num_correct = 0
     train_num_samples = 0
-    for batch_idx, (data, targets) in enumerate(dataloaders['train_domain']):
+    for batch_idx, (data, targets) in enumerate(dataloaders['train_object']):
         data = data.to(device=device)
         targets = targets.to(device=device)
 
@@ -115,14 +111,12 @@ for epoch in range(EPOCHS):
         _, predictions = scores.max(1)
         train_num_correct += (predictions == targets).sum()
         train_num_samples += predictions.size(0)
-
-    print(
-        f"Loss in epoch {epoch} :::: {loss_ep / batch_size}, train acc ::: {train_num_correct / float(train_num_samples):.2f}")
+    print(f"Loss in epoch {epoch} :::: {loss_ep / batch_size}, train acc ::: {train_num_correct/float(train_num_samples):.2f}")
 
     with torch.no_grad():
         num_correct = 0
         num_samples = 0
-        for batch_idx, (data, targets) in enumerate(dataloaders['test_domain']):
+        for batch_idx, (data, targets) in enumerate(dataloaders['test_object']):
             data = data.to(device=device)
             targets = targets.to(device=device)
             ## Forward Pass
@@ -130,12 +124,8 @@ for epoch in range(EPOCHS):
             _, predictions = scores.max(1)
             num_correct += (predictions == targets).sum()
             num_samples += predictions.size(0)
-
         print(
             f"Got {num_correct} / {num_samples} with accuracy {float(num_correct) / float(num_samples) * 100:.2f}"
         )
-        if float(num_correct) / float(num_samples) > best_acc:
-            best_acc = float(num_correct) / float(num_samples)
-            torch.save(model.state_dict(), f"{model_save_dir}/1a_Resnet18_dom_pacs_best.pth")
 
-torch.save(model.state_dict(), f"{model_save_dir}/1a_Resnet18_dom_pacs_{EPOCHS}.pth")
+torch.save(model.state_dict(), f"{model_save_dir}/1b_Resnet18_obj.pth")
