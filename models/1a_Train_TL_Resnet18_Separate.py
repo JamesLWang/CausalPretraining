@@ -16,7 +16,7 @@ from torchvision.models.resnet import resnet18 as resnet18
 
 import os
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"   # see issue #152
-os.environ["CUDA_VISIBLE_DEVICES"]="3"
+# os.environ["CUDA_VISIBLE_DEVICES"]="6,7"
 
 normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                  std=[0.229, 0.224, 0.225])
@@ -55,7 +55,7 @@ image_datasets = {
     
 }
 
-batch_size = 650
+batch_size = 1300
 dataloaders = {
     'train_object':
     torch.utils.data.DataLoader(image_datasets['train_object'],
@@ -82,6 +82,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu') #training 
 
 model = resnet18(pretrained=False)
 model = model.to(device=device) #to send the model for training on either cuda or cpu
+model = nn.DataParallel(model).cuda()
 
 ## Loss and optimizer
 learning_rate = 1e-4 #I picked this because it seems to be the most used by experts
@@ -90,6 +91,7 @@ criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr= learning_rate) #Adam seems to be the most popular for deep learning
 
 EPOCHS = 200
+best_acc = 0
 for epoch in range(EPOCHS):
     loss_ep = 0
     
@@ -120,5 +122,9 @@ for epoch in range(EPOCHS):
         print(
             f"Got {num_correct} / {num_samples} with accuracy {float(num_correct) / float(num_samples) * 100:.2f}"
         )
+        if float(num_correct) / float(num_samples) > best_acc:
+            best_acc = float(num_correct) / float(num_samples)
+            torch.save(model.state_dict(), f"{model_save_dir}/1a_Resnet18_dom_best.pth")
 
-torch.save(model.state_dict(), f"{model_save_dir}/1a_Resnet18_dom.pth")
+
+torch.save(model.state_dict(), f"{model_save_dir}/1a_Resnet18_dom_{EPOCHS}.pth")
