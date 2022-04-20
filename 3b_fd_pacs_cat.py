@@ -66,9 +66,9 @@ def get_args():
     parser.add_argument('--style', default='', type=str, choices=['A', 'C', 'P', 'S'])
     parser.add_argument('--chkpt-iters', default=10, type=int)
     if 'cv' in socket.gethostname():
-        parser.add_argument('--save_root_path', default='/proj/vondrick3/james/AudioDefense_/Control/results', type=str)
+        parser.add_argument('--save_root_path', default='/proj/james/AudioDefense_/Control/results', type=str)
     else:
-        parser.add_argument('--save_root_path', default='/proj/vondrick3/james/AudioDefense_/Control/results', type=str)
+        parser.add_argument('--save_root_path', default='/proj/james/AudioDefense_/Control/results', type=str)
     return parser.parse_args()
 
 def main():
@@ -102,7 +102,7 @@ def main():
 
     from dataloader.multidomain_loader import MultiDomainLoader, DomainTest, RandomData
     
-    root_path = "/proj/vondrick3/james/pacs_data_cat"
+    root_path = "/proj/james/pacs_data_cat"
 
     # subset from target domain validation, remember to also change the loader for validation loop
 
@@ -166,7 +166,7 @@ def main():
     #     train_sampler = torch.utils.data.distributed.DistributedSampler(train_dataset)
     # else:
 
-    # root_path="/local/vondrick/chengzhi/SpOfficeHome1"
+    # root_path="/local/james/SpOfficeHome1"
     # train_dataset = MultiDomainLoader(dataset_root_dir=root_path,
     #                                   train_split=['D1'], subsample=1) #, 'D2'
     # test_data = DomainTest(dataset_root_dir=root_path,

@@ -56,7 +56,7 @@ image_datasets = {
 
 }
 
-batch_size = 1300
+batch_size = 1600
 dataloaders = {
     'train_object':
         torch.utils.data.DataLoader(image_datasets['train_object'],
@@ -80,7 +80,7 @@ dataloaders = {
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')  # training with either cpu or cuda
 
-model = resnet18(pretrained=False)
+model = resnet18(pretrained=True)
 model = model.to(device=device) #to send the model for training on either cuda or cpu
 model = nn.DataParallel(model).cuda()
 
@@ -135,6 +135,6 @@ for epoch in range(EPOCHS):
 
         if float(num_correct) / float(num_samples) > best_acc:
             best_acc = float(num_correct) / float(num_samples)
-            torch.save(model.state_dict(), f"{model_save_dir}/1a_Resnet18_obj_pacs_best.pth")
-
-torch.save(model.state_dict(), f"{model_save_dir}/1b_Resnet18_obj_pacs_{EPOCHS}.pth")
+            # torch.save(model.state_dict(), f"{model_save_dir}/1a_Resnet18_obj_pacs_best.pth")
+            print("saved better one")
+# torch.save(model.state_dict(), f"{model_save_dir}/1b_Resnet18_obj_pacs_{EPOCHS}.pth")

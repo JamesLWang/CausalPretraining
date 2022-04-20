@@ -1,13 +1,12 @@
 import glob, os
 
-all_images = sorted(glob.glob("/proj/vondrick/james/OfficeHomeDataset_10072016/*"))
+all_images = sorted(glob.glob("/proj/james/OfficeHomeDataset_10072016/*"))
 domain_names = [os.path.basename(x) for x in all_images]
-domain_names
 
-classes = sorted(glob.glob(os.path.join(domain, "*")))
+classes = sorted(glob.glob(os.path.join(domain_names, "*")))
 class_names = [os.path.basename(x) for x in classes]
 
-outputDir = "/proj/vondrick/james/OfficeHomeDataset_Category_Final"
+outputDir = "/proj/james/OfficeHomeDataset_Category_Final"
 for class_name in class_names:
     newClassFile = os.path.join(outputDir, class_name) 
     isExist = os.path.exists(newClassFile)

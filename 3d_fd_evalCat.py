@@ -26,7 +26,7 @@ pil_logger.setLevel(logging.INFO)
 from models.resnet import resnet18, FCClassifier, resnet50, FDC, FC2Classifier, FDC5
 from dataloader.multidomain_loader import MultiDomainLoader, DomainTest, RandomData
     
-domain_model = torch.load("/proj/vondrick3/james/AudioDefense_/Control/results/pacs_cat_/2022-04-16_01:05:3657ba2e4d/model_best.pth")
+domain_model = torch.load("/proj/james/AudioDefense_/Control/results/pacs_cat_/2022-04-16_01:05:3657ba2e4d/model_best.pth")
 
 domain_resnet = resnet18()
 domain_fc = FDC(hidden_dim=512, cat_num=4, drop_xp=True).cuda()
@@ -48,7 +48,7 @@ domain_fc.load_state_dict(domain_model['state_dict_classifier'])
     
 
 
-root_path = "/proj/vondrick3/james/pacs_data_cat"
+root_path = "/proj/james/pacs_data_cat"
 train_dataset = MultiDomainLoader(dataset_root_dir=root_path,
                                       train_split=['dog', 'elephant', 'giraffe', 'guitar', 'horse', 'house'])
 test_data = DomainTest(dataset_root_dir=root_path, test_split=['person'])

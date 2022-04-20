@@ -30,10 +30,10 @@ test_d = 'photo'
 OOD_CAT = 0
 
 d_models = {
-    'art_painting': "/proj/vondrick3/james/AudioDefense_/Control/results/pacs_art_bl_A/2022-04-19_14:38:380c38766c/model_best.pth",
-    'cartoon': "/proj/vondrick3/james/AudioDefense_/Control/results/pacs_cartoon_bl_C/2022-04-19_14:38:3971f0585f/model_best.pth",
-    'sketch': "/proj/vondrick3/james/AudioDefense_/Control/results/pacs_sketch_bl_S/2022-04-19_13:14:5944e5b422/model_best.pth",
-    'photo': "/proj/vondrick3/james/AudioDefense_/Control/results/pacs_photo_bl_P/2022-04-19_13:15:02d0d03c54/model_best.pth"
+    'art_painting': "/proj/james/AudioDefense_/Control/results/pacs_art_bl_A/2022-04-19_14:38:380c38766c/model_best.pth",
+    'cartoon': "/proj/james/AudioDefense_/Control/results/pacs_cartoon_bl_C/2022-04-19_14:38:3971f0585f/model_best.pth",
+    'sketch': "/proj/james/AudioDefense_/Control/results/pacs_sketch_bl_S/2022-04-19_13:14:5944e5b422/model_best.pth",
+    'photo': "/proj/james/AudioDefense_/Control/results/pacs_photo_bl_P/2022-04-19_13:15:02d0d03c54/model_best.pth"
 }
 category_model = torch.load(d_models[test_d])
 
@@ -50,7 +50,7 @@ category_resnet_A.load_state_dict(category_model['state_dict_resnet'])
 
 
 
-domain_model = torch.load("/proj/vondrick3/james/AudioDefense_/Control/results/CAT_FINAL_/2022-04-19_15:40:28355be6a1/model_best.pth")
+domain_model = torch.load("/proj/james/AudioDefense_/Control/results/CAT_FINAL_/2022-04-19_15:40:28355be6a1/model_best.pth")
 
 domain_resnet = resnet18()
 domain_resnet.fc = nn.Linear(512, 4)
@@ -67,7 +67,7 @@ domain_resnet.load_state_dict(domain_model['state_dict_resnet'])
 
 
 pacs_categories = ['art_painting',  'cartoon', 'photo', 'sketch']
-root_path = "/proj/vondrick3/james/pacs_data"    
+root_path = "/proj/james/pacs_data"
 test_data = DomainTest(dataset_root_dir=root_path, test_split=[test_d])
 test_rand_data = RandomData(dataset_root_dir=root_path, all_split=[x for x in pacs_categories if x!=test_d])
 

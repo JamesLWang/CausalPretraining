@@ -56,7 +56,7 @@ image_datasets = {
         datasets.ImageFolder(f'{dataset_root}/PACS_Test_Domain', data_transforms['validation'])
 }
 
-batch_size = 1300
+batch_size = 650
 dataloaders = {
     'train_object':
         torch.utils.data.DataLoader(image_datasets['train_object'],
@@ -91,7 +91,7 @@ load_model = True
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=learning_rate)  # Adam seems to be the most popular for deep learning
 
-EPOCHS = 40
+EPOCHS = 20
 best_acc = 0
 
 for epoch in range(EPOCHS):

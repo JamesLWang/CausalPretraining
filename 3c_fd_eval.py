@@ -29,10 +29,10 @@ from dataloader.multidomain_loader import MultiDomainLoader, DomainTest, RandomD
 test_d = 'photo'
 
 d_models = {
-    'art_painting': "/proj/vondrick3/james/AudioDefense_/Control/results/pacs_art_A/2022-04-16_00:45:06ea32f3f9/model_best.pth",
-    'cartoon': "/proj/vondrick3/james/AudioDefense_/Control/results/pacs_cartoon_C/2022-04-16_00:45:3043729215/model_best.pth",
-    'sketch': "/proj/vondrick3/james/AudioDefense_/Control/results/pacs_sketch_S/2022-04-16_00:45:33b487de75/model_best.pth",
-    'photo': "/proj/vondrick3/james/AudioDefense_/Control/results/pacs_photo_P/2022-04-16_01:01:4216bfd383/model_best.pth"
+    'art_painting': "/proj/james/AudioDefense_/Control/results/pacs_art_A/2022-04-16_00:45:06ea32f3f9/model_best.pth",
+    'cartoon': "/proj/james/AudioDefense_/Control/results/pacs_cartoon_C/2022-04-16_00:45:3043729215/model_best.pth",
+    'sketch': "/proj/james/AudioDefense_/Control/results/pacs_sketch_S/2022-04-16_00:45:33b487de75/model_best.pth",
+    'photo': "/proj/james/AudioDefense_/Control/results/pacs_photo_P/2022-04-16_01:01:4216bfd383/model_best.pth"
 }
 category_model = torch.load(d_models[test_d])
 
@@ -54,7 +54,7 @@ category_model['state_dict_classifier'] = new_dict
 category_fc_A.load_state_dict(category_model['state_dict_classifier'])
     
     
-domain_model = torch.load("/proj/vondrick3/james/AudioDefense_/Control/results/pacs_cat_/2022-04-16_01:05:3657ba2e4d/model_best.pth")
+domain_model = torch.load("/proj/james/AudioDefense_/Control/results/pacs_cat_/2022-04-16_01:05:3657ba2e4d/model_best.pth")
 
 domain_resnet = resnet18()
 domain_fc = FDC(hidden_dim=512, cat_num=4, drop_xp=True).cuda()
@@ -77,7 +77,7 @@ domain_fc.load_state_dict(domain_model['state_dict_classifier'])
 pacs_categories = ['art_painting',  'cartoon', 'photo', 'sketch']
 
 
-root_path = "/proj/vondrick3/james/pacs_data"    
+root_path = "/proj/james/pacs_data"
 test_data = DomainTest(dataset_root_dir=root_path, test_split=[test_d])
 test_rand_data = RandomData(dataset_root_dir=root_path, all_split=[x for x in pacs_categories if x!=test_d])
 

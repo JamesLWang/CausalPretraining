@@ -15,7 +15,7 @@ import pathlib
 
 import os
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"   # see issue #152
-os.environ["CUDA_VISIBLE_DEVICES"]="5"
+# os.environ["CUDA_VISIBLE_DEVICES"]="5"
 
 normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                  std=[0.229, 0.224, 0.225])
@@ -54,7 +54,7 @@ image_datasets = {
     
 }
 
-batch_size = 1500
+batch_size = 3200
 dataloaders = {
     'train_object':
     torch.utils.data.DataLoader(image_datasets['train_object'],
