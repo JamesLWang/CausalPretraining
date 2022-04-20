@@ -101,23 +101,48 @@ def main():
     torch.cuda.manual_seed(args.seed)
 
     from dataloader.multidomain_loader import MultiDomainLoader, DomainTest, RandomData
-    
-    root_path = "/proj/vondrick3/james/pacs_data_cat"
+    root_path = "/proj/vondrick3/james/pacs_data"
 
     # subset from target domain validation, remember to also change the loader for validation loop
-
-    train_dataset = MultiDomainLoader(dataset_root_dir=root_path,
-                                      train_split=['dog', 'elephant', 'giraffe', 'guitar', 'horse', 'house'])
-    test_data = DomainTest(dataset_root_dir=root_path,
-                           test_split=['person'])
-    test_rand_data = RandomData(dataset_root_dir=root_path,
-                                all_split=['dog', 'elephant', 'giraffe', 'guitar', 'horse', 'house'])
-    test_d = "person"
-
+    if args.style == 'S':
+        train_dataset = MultiDomainLoader(dataset_root_dir=root_path,
+                                          train_split=['art_painting', 'cartoon', 'photo'])
+        test_data = DomainTest(dataset_root_dir=root_path,
+                               test_split=['sketch'])
+        test_rand_data = RandomData(dataset_root_dir=root_path,
+                                    all_split=['art_painting', 'cartoon', 'photo'])
+        test_d = "sketch"
+    elif args.style == 'P':
+        print("OK")
+        train_dataset = MultiDomainLoader(dataset_root_dir=root_path,
+                                          train_split=['art_painting', 'cartoon', 'sketch'])
+        test_data = DomainTest(dataset_root_dir=root_path,
+                               test_split=['photo'])
+        test_rand_data = RandomData(dataset_root_dir=root_path,
+                                    all_split=['art_painting', 'cartoon', 'sketch'])
+        test_d = 'photo'
+    elif args.style == 'A':
+        train_dataset = MultiDomainLoader(dataset_root_dir=root_path,
+                                          train_split=['photo', 'cartoon', 'sketch'])
+        test_data = DomainTest(dataset_root_dir=root_path,
+                               test_split=['art_painting'])
+        test_rand_data = RandomData(dataset_root_dir=root_path,
+                                    all_split=['cartoon', 'photo', 'sketch'])
+        test_d = 'art_painting'
+    elif args.style == 'C':
+        train_dataset = MultiDomainLoader(dataset_root_dir=root_path,
+                                          train_split=['photo', 'art_painting', 'sketch'])
+        test_data = DomainTest(dataset_root_dir=root_path,
+                               test_split=['cartoon'])
+        test_rand_data = RandomData(dataset_root_dir=root_path,
+                                    all_split=['art_painting', 'photo', 'sketch'])
+        test_d = 'cartoon'
     val_data = test_data
 
     print('domain', test_d)
+    
 
+    # subset from target domain validation, remember to also change the loader for validation loop
     train_sampler = None
 
     train_loader = torch.utils.data.DataLoader(
@@ -136,7 +161,7 @@ def main():
     from models.resnet import resnet18, FCClassifier, resnet50, FDC, FC2Classifier, FDC5
 
     resnet = resnet18()    
-    resnet.fc = nn.Linear(512, 4)
+    resnet.fc = nn.Linear(512, 7)
     resnet = nn.DataParallel(resnet).cuda()
     resnet.train()
 
