@@ -20,6 +20,15 @@ root
 ├── *.ipynb 		# experimental code
 └── *.py
 ```
+## Model Architecture
+For category classification:
+![Category Classification Architecture](images/archi.png)
+where essentially:
+- a Resnet-18 is used for modelling $P(Z|X)$
+- the final classifier models on $P(Y | Z, X)$
+- the sampling time for computing sums is not shown here
+
+For domain classification essentially the final classifier outputs a 4 dimensional vector, representing the 4 domains in the PACS dataset.
 
 ## Data Preprocessing
 Either
